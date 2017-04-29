@@ -1,7 +1,7 @@
 (function() {
 
     // var debug = true;
-    var debug = location.hostname.length > 0;
+    var debug = location.hostname.length == 0;
 
     var init = function(name) {
         var e = document.getElementById("detail." + name);
