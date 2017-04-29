@@ -181,7 +181,7 @@ div#next {
 
 div#output {
     position: absolute;
-    height: calc( 100% - 56px);
+    height: calc( 100% - 86px);
     width: 100%;
     top: 56px;
     left: 0px;
