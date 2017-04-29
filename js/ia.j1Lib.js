@@ -169,7 +169,7 @@
             ctx.font = "bold 30px Ubuntu";
             // ctx.fillText("Wong Ka Wa", 600, 736);
 
-            canvas[url] = canvas.toDataURL();
+            cache[url] = canvas.toDataURL();
             // document.body.appendChild(canvas);
 
         };
