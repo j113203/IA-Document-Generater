@@ -173,7 +173,7 @@
         "Personal": {
             "English Name": "Wong Ka Wa",
             "Chinese Name": "黄嘉華",
-            "HKID No": "R602276(5)",
+            "HKID No": "R0000000",
             "Student ID": "150595510",
             "Department": "Infomation Technology",
             "Programme Code": "IT114105",
