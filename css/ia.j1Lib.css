@@ -212,3 +212,14 @@ div#output>div.image>div {
     color: #e0e0e0;
     overflow: hidden;
 }
+
+div#output>button {
+    background-color: #3f51b5;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 16px;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
