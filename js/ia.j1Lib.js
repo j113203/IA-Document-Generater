@@ -1,6 +1,7 @@
 (function() {
 
-    var debug = true;
+    // var debug = true;
+    var debug = location.hostname.length > 0;
 
     var init = function(name) {
         var e = document.getElementById("detail." + name);
@@ -184,11 +185,11 @@
 
     };
 
-    window.cache = {
+    var cache = {
 
     };
 
-    window.data = {
+    var data = {
         "System": {
             "Date": "2017/04/28"
         },
@@ -204,6 +205,9 @@
             "Study/Class": "2/C",
             "Telephone": "91738490",
             "Email": "j113203@gmail.com"
+        },
+        "Company": {
+
         }
     };
 
