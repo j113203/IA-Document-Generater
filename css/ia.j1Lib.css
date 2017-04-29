@@ -224,3 +224,10 @@ div#output>button {
     right: 50px;
     bottom: 50px;
 }
+
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
