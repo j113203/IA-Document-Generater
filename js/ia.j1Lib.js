@@ -160,6 +160,20 @@
             image[i].style.backgroundImage = "url('IA Document Template/" + image[i].firstChild.innerHTML + "/" + image[i].firstChild.innerHTML + "-1.png')";
         }
 
+        output.getElementsByTagName("button")[0].onclick = function() {
+            var zip = new JSZip();
+            zip.file("readme.txt", "IA Document Generater v1.0\n\nPower By j113203");
+            var img = zip.folder("IA Document");
+            for (var e in cache) {
+                img.file(e.substr(e.lastIndexOf("/") + 1), cache[e], { base64: true });
+            }
+
+            zip.generateAsync({ type: "blob" })
+                .then(function(content) {
+                    saveAs(content, "IA Document - Power By j113203.zip");
+                });
+        };
+
     };
 
     window.cache = {
