@@ -180,6 +180,7 @@ div#next {
 }
 
 div#output {
+    display: none;
     position: absolute;
     height: calc( 100% - 86px);
     width: 100%;
@@ -219,7 +220,7 @@ div#output>button {
     outline: none;
     border: none;
     padding: 16px;
-    position: absolute;
+    position: fixed;
     right: 50px;
     bottom: 50px;
 }
