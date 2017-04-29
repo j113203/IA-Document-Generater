@@ -1,6 +1,5 @@
 @import url('reset.min.css');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('animate.min.css');
 html {
     font-family: 'Ubuntu', sans-serif;
     background-color: #FAFAFA;
