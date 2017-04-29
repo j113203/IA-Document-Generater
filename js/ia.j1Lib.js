@@ -1,5 +1,7 @@
 (function() {
 
+    var debug = false;
+
     var init = function(name) {
         var e = document.getElementById("detail." + name);
         var input = e.getElementsByTagName("input");
@@ -112,7 +114,7 @@
             },
             "Statement of Understanding (Organization)": {
                 "1": {
-
+                    "1300,1655": "${ Campus from Personal }"
                 },
                 "2": {
 
@@ -123,6 +125,18 @@
             },
             "Student Information": {
                 "1": {
+                    "500,260": "${ English Name from Personal }",
+                    "1000,260": "${ Chinese Name from Personal }",
+                    "250,410": "${ HKID No from Personal }",
+                    "750,410": "${ Student ID from Personal }",
+                    "1210,410": "${ Department from Personal }",
+                    "400,495": "${ Programme Code from Personal }",
+                    "120,605": "${ Programme Title from Personal }",
+                    "790,540": "${ Campus from Personal }",
+                    "1210,540": "${ Study/Class from Personal }",
+                    "500,660": "${ Telephone from Personal }",
+                    "980,660": "${ Email from Personal }",
+                    "240,1890": "${ Date from System }",
 
                 }
             }
@@ -132,7 +146,11 @@
 
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
-                edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
+
+                if (!debug || i == "Statement of Understanding (Organization)" && v == "3") {
+                    edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
+                }
+
             });
             return '<div class="image shadow"><div>' + i + '</div></div>';
         }).join("");
@@ -142,25 +160,49 @@
             image[i].style.backgroundImage = "url('IA Document Template/" + image[i].firstChild.innerHTML + "/" + image[i].firstChild.innerHTML + "-1.png')";
         }
 
-        // edit("IA Document Template/Final Report (CompanyOrganization Mentor)/Final Report (CompanyOrganization Mentor)-1.png");
     };
 
     window.cache = {
 
     };
 
+    window.data = {
+        "System": {
+            "Date": "2017/04/28"
+        },
+        "Personal": {
+            "English Name": "Wong Ka Wa",
+            "Chinese Name": "黄嘉華",
+            "HKID No": "R602276(5)",
+            "Student ID": "150595510",
+            "Department": "Infomation Technology",
+            "Programme Code": "IT114105",
+            "Programme Title": "Higher Diploma in Software Engineering",
+            "Campus": "LWL",
+            "Study/Class": "2/C",
+            "Telephone": "91738490",
+            "Email": "j113203@gmail.com"
+        }
+    };
+
+    var replace = function(str) {
+        return str.replace(/\${.(.*).from.(.*).}/g, function(a, b, c) {
+            return data[c][b] || "";
+        });
+    };
+
     var edit = function(url, setting) {
 
         img = new Image();
 
-        img.setAttribute('crossOrigin', 'anonymous');
-
         img.onload = function() {
 
             var canvas = document.createElement('canvas');
-            canvas.style.position = "absolute";
-            //  canvas.style.width = "100%";
-            // canvas.style.height = "100%";
+            if (debug) {
+                canvas.style.position = "absolute";
+                canvas.style.width = "100%";
+                canvas.style.height = "100%";
+            }
             canvas.width = this.width;
             canvas.height = this.height;
             var ctx = canvas.getContext("2d");
@@ -168,9 +210,16 @@
             ctx.drawImage(img, 0, 0);
             ctx.font = "bold 30px Ubuntu";
             // ctx.fillText("Wong Ka Wa", 600, 736);
+            Object.keys(setting).forEach(function(i) {
+                var v = i.split(",");
+                ctx.fillText(replace(setting[i]), v[0], v[1]);
+            });
 
-            cache[url] = canvas.toDataURL();
-            // document.body.appendChild(canvas);
+            if (debug) {
+                document.body.appendChild(canvas);
+            } else {
+                cache[url] = canvas.toDataURL();
+            }
 
         };
 
