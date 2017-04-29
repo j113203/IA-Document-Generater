@@ -1,6 +1,5 @@
 (function() {
 
-    // var debug = true;
     var debug = location.hostname.length == 0;
 
     var init = function(name) {
@@ -94,18 +93,35 @@
             },
             "Final Report (CompanyOrganization Mentor)": {
                 "1": {
-
+                    "600,480": "${ English Name from Company }",
+                    "600,530": "${ Address from Company }",
+                    "600,580": "${ Mentor Name from Company }",
+                    "600,630": "${ Mentor Telephone from Company }",
+                    "600,680": "${ Mentor Email from Company }",
+                    "600,730": "${ English Name from Company }",
+                    "1160,580": "${ Job Title from Company }",
+                    "1160,630": "${ Job Department from Company }",
+                    "1160,680": "${ Fax Number from Company }",
+                    "800,785": "${ From from Company }",
+                    "1220,785": "${ To from Company }",
                 },
                 "2": {
 
                 },
                 "3": {
-
+                    "710,1800": "${ To from Company }",
+                    "710,1980": "${ To from Company }",
                 }
             },
             "Industrial Attachment Certificate (Template)": {
                 "1": {
-
+                    "430,610": "${ English Name from Personal }",
+                    "430,790": "${ English Name from Company }",
+                    "560,950": "${ From from Company }",
+                    "810,950": "${ Hours from Company }",
+                    "430,1170": "${ Chinese Name from Personal }",
+                    "520,1290": "${ English Name from Company }",
+                    "930,1390": "${ Hours from Company }",
                 }
             },
             "Insurance Coverage for Industrial Attachment Students": {
@@ -113,12 +129,16 @@
 
                 },
                 "2": {
-
+                    "1000,1240": "${ From from Company }"
                 }
             },
             "Monthly Report (Student)": {
                 "1": {
-
+                    "780,410": "${ From from Company }",
+                    "1100,410": "${ To from Company }",
+                    "1170,1195": "${ Hours from Company }",
+                    "680,1780": "${ English Name from Personal }",
+                    "680,1980": "${ To from Company }"
                 }
             },
             "Statement of Understanding (Organization)": {
@@ -146,7 +166,6 @@
                     "500,660": "${ Telephone from Personal }",
                     "980,660": "${ Email from Personal }",
                     "240,1890": "${ Date from System }",
-
                 }
             }
         };
@@ -156,7 +175,7 @@
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
 
-                if (!debug || i == "Statement of Understanding (Organization)" && v == "3") {
+                if (!debug || i == "Evaluation Report (Student)" && v == "1") {
                     edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
                 }
 
@@ -185,7 +204,7 @@
 
     };
 
-    window.cache = {
+    var cache = {
 
     };
 
@@ -207,7 +226,19 @@
             "Email": "j113203@gmail.com"
         },
         "Company": {
-
+            "English Name": "XXX Limited",
+            "Address": "XXX, HK",
+            "Fax Number": "00000000",
+            "Mentor Name": "Jack Wong",
+            "Mentor Title": "System Analysis",
+            "Mentor Email": "j113203@gmail.com",
+            "Mentor Telephone": "00000000",
+            "Job Title": "Programmer",
+            "Job Department": "Development",
+            "From": "27-07-2016",
+            "To": "26-08-2016",
+            "Hours": "180",
+            "Allowance (Total)": "100"
         }
     };
 
@@ -242,7 +273,7 @@
             });
 
             if (debug) {
-                // document.body.appendChild(canvas);
+                document.body.appendChild(canvas);
             } else {
                 cache[this.src] = canvas.toDataURL();
             }
@@ -252,4 +283,9 @@
         img.src = url;
     };
 
+
+    if (debug) {
+        document.getElementById("output").style.display = "block";
+        output();
+    }
 })();
