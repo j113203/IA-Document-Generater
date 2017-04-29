@@ -153,7 +153,7 @@
 
             });
             return '<div class="image shadow"><div>' + i + '</div></div>';
-        }).join("");
+        }).join("") + '<button class="shadow">Download All</button>';
 
         var image = output.getElementsByTagName("div");
         for (var i = 0; i < image.length; i += 2) {
