@@ -1,4 +1,3 @@
-@import url('reset.min.css');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 html {
     font-family: 'Ubuntu', sans-serif;
@@ -56,7 +55,7 @@ div#detail\.company.await {
 
 div.category {
     height: 176px;
-    background-image: url("../img/welcome_card.jpg");
+    background-image: url("img/welcome_card.jpg");
     background-position: center;
     background-size: cover;
     padding-top: 130px;

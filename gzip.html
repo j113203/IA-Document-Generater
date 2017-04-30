@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>IA Document Generater | Power By j113203</title>
+    <meta charset="UTF-8">
+    <script src="js/gunzip.min.js"></script>
+</head>
+
+<body>
+    <script defer>
+        function gzip(e) {
+            if (e) {
+                e = [...arguments];
+                this.gz(e.shift(), function(i, v) {
+                    console.log(i);
+                    if (v.startsWith("css")) {
+                        document.head.innerHTML += "<style>" + i + "<\/style>";
+                    } else if (v.startsWith("js")) {
+                        eval(i);
+                    } else {
+                        document.body.innerHTML = i;
+                    }
+                    new gzip(...e)
+                });
+            }
+        }
+
+        gzip.prototype.ajax = function(e, n, t) {
+            var r = new XMLHttpRequest;
+            return r.open("GET", e + ".gz"), r.overrideMimeType("text/plain; charset=x-user-defined; j1Lib"), r.addEventListener("load", function() {
+                200 == r.status ? n(r) : t(r)
+            }), r.addEventListener("error", function() {
+                t(r)
+            }), r
+        };
+
+        gzip.prototype.gz = function(o, n) {
+            this.ajax(o, function(e) {
+                n(new TextDecoder("utf-8").decode(new Zlib.Gunzip(e.responseText.split("").map(function(e) {
+                    return 255 & e.charCodeAt(0)
+                })).decompress()), o)
+            }, function() {
+                n("", o)
+            }).send()
+        };
+
+        new gzip("index.min.html", "css/reset.min.css", "css/ia.j1Lib.min.css", "js/ia.j1Lib.min.js", "js/jszip.min.js", "js/jspdf.min.js", "js/FileSaver.min.js");
+    </script>
+</body>
+
+</html>
