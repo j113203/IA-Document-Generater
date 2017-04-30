@@ -419,7 +419,7 @@
                 }
 
                 zip.generateAsync({ type: "blob" }).then(function(content) {
-                    this.innerHTML = "Ready";
+                    th.innerHTML = "Ready";
                     saveAs(content, "IA Document - Power By j113203.zip");
                     th.style.backgroundColor = c;
                     th.innerHTML = t;
@@ -448,7 +448,7 @@
                 }
 
                 zip.generateAsync({ type: "blob" }).then(function(content) {
-                    this.innerHTML = "Ready";
+                    th.innerHTML = "Ready";
                     saveAs(content, "IA Document - Power By j113203.zip");
                     th.style.backgroundColor = c;
                     th.innerHTML = t;
