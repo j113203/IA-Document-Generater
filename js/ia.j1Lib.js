@@ -151,6 +151,9 @@
                     "1300,1655": "${ Campus from Personal }"
                 },
                 "2": {
+                    "1000,1980": "${ Allowance (Total) from Company }",
+                    "1105,1840": "${ From from Company }",
+                    "1320,1840": "${ To from Company }",
 
                 },
                 "3": {
@@ -180,7 +183,7 @@
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
 
-                if (!debug || i == "Insurance Coverage for Industrial Attachment Students" && v == "2") {
+                if (!debug || i == "Statement of Understanding (Organization)" && v == "3") {
                     edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
                 }
 
