@@ -314,7 +314,7 @@
             } else {
                 console.log("IA Document Template/" + name + "/" + name + "-" + i + ".png");
                 console.log(cache);
-                return '<img src="' + cache["IA Document Template/" + name + "/" + name + "-" + i + ".png"] + '" />';
+                return '<img src="' + cache[document.location.href + encodeURI("IA Document Template/" + name + "/" + name + "-" + i + ".png")] + '" />';
             }
         }).join("");
 
