@@ -2,7 +2,7 @@
 
     var debug = location.hostname.length == 0;
 
-    var version = "1.4";
+    var version = "1.5";
 
     var header = document.getElementById("header");
     header.innerHTML += " v" + version;
