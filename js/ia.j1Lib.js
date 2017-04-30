@@ -402,7 +402,9 @@
             zip.file("readme.txt", "IA Document Generater v" + version + "\n\nPower By j113203");
             var img = zip.folder("IA Document");
             for (var e in cache) {
-                img.file(unescape(e.substr(e.lastIndexOf("/") + 1)), cache[e].split('base64,')[1], { base64: true });
+                var pdf = new jsPDF();
+                pdf.addImage(cache[e], 'PNG', 0, 0);
+                img.file(unescape(e.substr(e.lastIndexOf("/") + 1)) + ".pdf", pdf.output('datauri').split('base64,')[1], { base64: true });
             }
 
             zip.generateAsync({ type: "blob" }).then(function(content) {
