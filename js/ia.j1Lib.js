@@ -165,7 +165,7 @@
                     "1210,540": "${ Study/Class from Personal }",
                     "500,660": "${ Telephone from Personal }",
                     "980,660": "${ Email from Personal }",
-                    "240,1890": "${ Date from System }",
+                    "240,1890": "${ To from Company }",
                 }
             }
         };
@@ -193,13 +193,13 @@
             zip.file("readme.txt", "IA Document Generater v1.0\n\nPower By j113203");
             var img = zip.folder("IA Document");
             for (var e in cache) {
-                img.file(e.substr(e.lastIndexOf("/") + 1), cache[e].split('base64,')[1], { base64: true });
+                img.file((e.substr(e.lastIndexOf("/") + 1)).split(" ").join("_"), cache[e].split('base64,')[1], { base64: true });
             }
 
-            zip.generateAsync({ type: "blob" })
-                .then(function(content) {
-                    saveAs(content, "IA Document - Power By j113203.zip");
-                });
+            zip.generateAsync({ type: "blob" }).then(function(content) {
+                saveAs(content, "IA Document - Power By j113203.zip");
+            });
+
         };
 
     };
@@ -209,9 +209,6 @@
     };
 
     var data = {
-        "System": {
-            "Date": "2017/04/28"
-        },
         "Personal": {
             "English Name": "Wong Ka Wa",
             "Chinese Name": "黄嘉華",
