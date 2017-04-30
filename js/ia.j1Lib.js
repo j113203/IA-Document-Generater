@@ -2,6 +2,11 @@
 
     var debug = location.hostname.length == 0;
 
+    var version = "1.1";
+
+    var header = document.getElementById("header");
+    header.innerHTML += " v" + version;
+
     var init = function(name) {
         var e = document.getElementById("detail." + name);
         var input = e.getElementsByTagName("input");
@@ -189,16 +194,19 @@
 
             });
             return '<div class="image shadow"><div>' + i + '</div></div>';
-        }).join("") + '<button class="shadow">Download All</button>';
+        }).join("") + '<button class="shadow">Download Zip</button>';
 
         var image = output.getElementsByTagName("div");
         for (var i = 0; i < image.length; i += 2) {
             image[i].style.backgroundImage = "url('IA Document Template/" + image[i].firstChild.innerHTML + "/" + image[i].firstChild.innerHTML + "-1.png')";
+            image[i].onclick = function() {
+                preview(this.firstChild.innerHTML, Object.keys(Template[this.firstChild.innerHTML]));
+            };
         }
 
         output.getElementsByTagName("button")[0].onclick = function() {
             var zip = new JSZip();
-            zip.file("readme.txt", "IA Document Generater v1.0\n\nPower By j113203");
+            zip.file("readme.txt", "IA Document Generater v" + version + "\n\nPower By j113203");
             var img = zip.folder("IA Document");
             for (var e in cache) {
                 img.file(unescape(e.substr(e.lastIndexOf("/") + 1)), cache[e].split('base64,')[1], { base64: true });
@@ -278,7 +286,7 @@
             });
 
             if (debug) {
-                document.body.appendChild(canvas);
+                // document.body.appendChild(canvas);
             } else {
                 cache[this.src] = canvas.toDataURL();
             }
@@ -288,6 +296,32 @@
         img.src = url;
     };
 
+
+    var preview = function(name, pic) {
+        var e = document.getElementById("preview");
+        e.style.display = "block";
+        var image = document.getElementById("image");
+        e.onclick = function(e) {
+            if (e.target == image) {
+                this.style.display = "none";
+            }
+        };
+
+        var thumbnail = document.getElementById("thumbnail");
+        thumbnail.innerHTML = pic.map(function(i) {
+            return '<img src="IA Document Template/' + name + "/" + name + "-" + i + '.png" />';
+        }).join("");
+
+        for (var i in pic) {
+            if (i == 0) {
+                image.children[0].src = "IA Document Template/" + name + "/" + name + "-" + pic[i] + ".png";
+            }
+            thumbnail.children[i].onclick = function() {
+                image.children[0].src = this.src;
+            };
+        }
+
+    };
 
     if (debug) {
         document.getElementById("output").style.display = "block";
