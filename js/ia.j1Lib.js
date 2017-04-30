@@ -377,8 +377,8 @@
                     "250,410": "${ HKID No from Personal }",
                     "750,410": "${ Student ID from Personal }",
                     "1210,410": "${ Department from Personal }",
-                    "400,495": "${ Programme Code from Personal }",
-                    "120,605": "${ Programme Title from Personal }",
+                    "370,495": "${ Programme Code from Personal }",
+                    "370,585": "${ Programme Title from Personal }",
                     "790,540": "${ Campus from Personal }",
                     "1210,540": "${ Study/Class from Personal }",
                     "500,660": "${ Telephone from Personal }",
@@ -393,7 +393,7 @@
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
 
-                if (!debug || i == "Insurance Coverage for Industrial Attachment Students" && v == "2") {
+                if (!debug || i == "Student Information" && v == "1") {
                     edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
                 }
 
