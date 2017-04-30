@@ -309,17 +309,20 @@
 
         var thumbnail = document.getElementById("thumbnail");
         thumbnail.innerHTML = pic.map(function(i) {
-            return '<img src="IA Document Template/' + name + "/" + name + "-" + i + '.png" />';
+            if (debug) {
+                return '<img src="IA Document Template/' + name + "/" + name + "-" + i + '.png" />';
+            } else {
+                return '<img src="' + cache[unescape("IA Document Template/" + name + "/" + name + "-" + i + ".png")] + '" />';
+            }
         }).join("");
 
         for (var i in pic) {
-            if (i == 0) {
-                image.children[0].src = "IA Document Template/" + name + "/" + name + "-" + pic[i] + ".png";
-            }
             thumbnail.children[i].onclick = function() {
                 image.children[0].src = this.src;
             };
         }
+
+        thumbnail.children[0].onclick();
 
     };
 
