@@ -406,23 +406,27 @@
 
             this.style.backgroundColor = "#757575";
             this.innerHTML = "Prepareing ..";
-            var zip = new JSZip();
-            zip.file("readme.txt", "IA Document Generater v" + version + "\n\nPower By j113203");
-            var img = zip.folder("IA Document");
-            for (var e in cache) {
-                var pdf = new jsPDF();
-                pdf.addImage(cache[e], 'PNG', 0, 0);
-                img.file(unescape(e.substr(e.lastIndexOf("/") + 1)) + ".pdf", pdf.output('datauri').split('base64,')[1], { base64: true });
-            }
 
-            zip.generateAsync({ type: "blob" }).then(function(content) {
-                this.innerHTML = "Ready";
-                saveAs(content, "IA Document - Power By j113203.zip");
-                th.style.backgroundColor = c;
-                th.innerHTML = t;
-                th.disabled = false;
-            });
+            setTimeout(function() {
 
+                var zip = new JSZip();
+                zip.file("readme.txt", "IA Document Generater v" + version + "\n\nPower By j113203");
+                var img = zip.folder("IA Document");
+                for (var e in cache) {
+                    var pdf = new jsPDF();
+                    pdf.addImage(cache[e], 'PNG', 0, 0);
+                    img.file(unescape(e.substr(e.lastIndexOf("/") + 1)) + ".pdf", pdf.output('datauri').split('base64,')[1], { base64: true });
+                }
+
+                zip.generateAsync({ type: "blob" }).then(function(content) {
+                    this.innerHTML = "Ready";
+                    saveAs(content, "IA Document - Power By j113203.zip");
+                    th.style.backgroundColor = c;
+                    th.innerHTML = t;
+                    th.disabled = false;
+                });
+
+            }, 1000);
         };
 
         output.getElementsByTagName("button")[1].onclick = function() {
@@ -434,21 +438,23 @@
 
             this.style.backgroundColor = "#757575";
             this.innerHTML = "Prepareing ..";
-            var zip = new JSZip();
-            zip.file("readme.txt", "IA Document Generater v" + version + "\n\nPower By j113203");
-            var img = zip.folder("IA Document");
-            for (var e in cache) {
-                img.file(unescape(e.substr(e.lastIndexOf("/") + 1)), cache[e].split('base64,')[1], { base64: true });
-            }
 
-            zip.generateAsync({ type: "blob" }).then(function(content) {
-                this.innerHTML = "Ready";
-                saveAs(content, "IA Document - Power By j113203.zip");
-                th.style.backgroundColor = c;
-                th.innerHTML = t;
-                th.disabled = false;
-            });
+            setTimeout(function() {
+                var zip = new JSZip();
+                zip.file("readme.txt", "IA Document Generater v" + version + "\n\nPower By j113203");
+                var img = zip.folder("IA Document");
+                for (var e in cache) {
+                    img.file(unescape(e.substr(e.lastIndexOf("/") + 1)), cache[e].split('base64,')[1], { base64: true });
+                }
 
+                zip.generateAsync({ type: "blob" }).then(function(content) {
+                    this.innerHTML = "Ready";
+                    saveAs(content, "IA Document - Power By j113203.zip");
+                    th.style.backgroundColor = c;
+                    th.innerHTML = t;
+                    th.disabled = false;
+                });
+            }, 1000);
         };
 
     };
