@@ -351,11 +351,23 @@
                 "2": {
                     "1000,1980": "${ Allowance (Total) from Company }",
                     "1105,1840": "${ From from Company }",
-                    "1320,1840": "${ To from Company }",
-
+                    "1320,1840": "${ To from Company }"
                 },
                 "3": {
-
+                    "1000,960": "${ To from Company }",
+                    "290,1010": "${ To from Company }",
+                    "500,850": "${ Mentor Name from Company }",
+                    "500,900": "${ Mentor Title from Company }",
+                    "500,950": "${ English Name from Company }",
+                    "214,1260": "${ English Name from Personal }",
+                    "660,1260": "${ Study/Class from Personal }",
+                    "980,1250": "${ Programme Code from Personal }",
+                    "825,1310": "${ Programme Title from Personal }",
+                    "224,1500": "${ English Name from Personal }",
+                    "690,1540": "${ From from Company }",
+                    "450,1770": "${ English Name from Personal }",
+                    "340,1825": "${ HKID No from Personal }",
+                    "300,1875": "${ To from Company }",
                 }
             },
             "Student Information": {
@@ -381,7 +393,7 @@
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
 
-                if (!debug || i == "Industrial Attachment Certificate (Template)" && v == "1") {
+                if (!debug || i == "Statement of Understanding (Organization)" && v == "3") {
                     edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
                 }
 
@@ -473,7 +485,7 @@
             "Student ID": "150595510",
             "Department": "Infomation Technology",
             "Programme Code": "IT114105",
-            "Programme Title": "Higher Diploma in Software Engineering",
+            "Programme Title": "Software Engineering",
             "Campus": "LWL",
             "Study/Class": "2/C",
             "Telephone": "91738490",
@@ -545,7 +557,7 @@
             });
 
             if (debug) {
-                // document.body.appendChild(canvas);
+                document.body.appendChild(canvas);
             } else {
                 cache[this.src] = canvas.toDataURL();
             }
