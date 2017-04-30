@@ -414,8 +414,8 @@
                 var img = zip.folder("IA Document");
                 for (var e in cache) {
                     var pdf = new jsPDF("p", "mm", "a4");
-                    var width = doc.internal.pageSize.width;
-                    var height = doc.internal.pageSize.height;
+                    var width = pdf.internal.pageSize.width;
+                    var height = pdf.internal.pageSize.height;
                     pdf.addImage(cache[e], 'PNG', 0, 0, width, height);
                     img.file(unescape(e.substr(e.lastIndexOf("/") + 1)) + ".pdf", pdf.output('datauri').split('base64,')[1], { base64: true });
                 }
