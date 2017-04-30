@@ -220,7 +220,7 @@
 
     };
 
-    var cache = {
+    window.cache = {
 
     };
 
@@ -312,7 +312,9 @@
             if (debug) {
                 return '<img src="IA Document Template/' + name + "/" + name + "-" + i + '.png" />';
             } else {
-                return '<img src="' + cache[unescape("IA Document Template/" + name + "/" + name + "-" + i + ".png")] + '" />';
+                console.log("IA Document Template/" + name + "/" + name + "-" + i + ".png");
+                console.log(cache);
+                return '<img src="' + cache["IA Document Template/" + name + "/" + name + "-" + i + ".png"] + '" />';
             }
         }).join("");
 
