@@ -224,6 +224,11 @@ div#output>button {
     position: fixed;
     right: 50px;
     bottom: 50px;
+    width: 120px;
+}
+
+div#output>button:nth-of-type(2) {
+    bottom: 120px;
 }
 
 body {
