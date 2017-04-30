@@ -84,16 +84,208 @@
 
     var output = function() {
 
+        initData();
+
         var Template = {
             "Evaluation Report (Student)": {
                 "1": {
+                    "232,586": "${ Campus-1 from Evaluation Report }",
+                    "232,636": "${ Campus-2 from Evaluation Report }",
+                    "232,686": "${ Campus-3 from Evaluation Report }",
+                    "232,736": "${ Campus-4 from Evaluation Report }",
+                    "232,786": "${ Campus-5 from Evaluation Report }",
+                    "232,836": "${ Campus-6 from Evaluation Report }",
+                    "500,940": "${ Programme Code from Personal }",
+                    "210,1090": "✓",
 
+                    "726,1600": "${ 5.1.1 from Evaluation Report }",
+                    "810,1600": "${ 5.1.2 from Evaluation Report }",
+                    "890,1600": "${ 5.1.3 from Evaluation Report }",
+                    "970,1600": "${ 5.1.4 from Evaluation Report }",
+                    "1050,1600": "${ 5.1.5 from Evaluation Report }",
+                    "1130,1600": "${ 5.1.6 from Evaluation Report }",
+                    "1210,1600": "${ 5.1.7 from Evaluation Report }",
+                    "1290,1600": "${ 5.1.8 from Evaluation Report }",
+                    "1370,1600": "${ 5.1.9 from Evaluation Report }",
+                    "1460,1600": "${ 5.1.10 from Evaluation Report }",
+
+                    "726,1750": "${ 5.2.1 from Evaluation Report }",
+                    "810,1750": "${ 5.2.2 from Evaluation Report }",
+                    "890,1750": "${ 5.2.3 from Evaluation Report }",
+                    "970,1750": "${ 5.2.4 from Evaluation Report }",
+                    "1050,1750": "${ 5.2.5 from Evaluation Report }",
+                    "1130,1750": "${ 5.2.6 from Evaluation Report }",
+                    "1210,1750": "${ 5.2.7 from Evaluation Report }",
+                    "1290,1750": "${ 5.2.8 from Evaluation Report }",
+                    "1370,1750": "${ 5.2.9 from Evaluation Report }",
+                    "1460,1750": "${ 5.2.10 from Evaluation Report }",
+
+                    "726,1950": "${ 5.3.1 from Evaluation Report }",
+                    "810,1950": "${ 5.3.2 from Evaluation Report }",
+                    "890,1950": "${ 5.3.3 from Evaluation Report }",
+                    "970,1950": "${ 5.3.4 from Evaluation Report }",
+                    "1050,1950": "${ 5.3.5 from Evaluation Report }",
+                    "1130,1950": "${ 5.3.6 from Evaluation Report }",
+                    "1210,1950": "${ 5.3.7 from Evaluation Report }",
+                    "1290,1950": "${ 5.3.8 from Evaluation Report }",
+                    "1370,1950": "${ 5.3.9 from Evaluation Report }",
+                    "1460,1950": "${ 5.3.10 from Evaluation Report }",
+
+                    "726,2150": "${ 5.4.1 from Evaluation Report }",
+                    "810,2150": "${ 5.4.2 from Evaluation Report }",
+                    "890,2150": "${ 5.4.3 from Evaluation Report }",
+                    "970,2150": "${ 5.4.4 from Evaluation Report }",
+                    "1050,2150": "${ 5.4.5 from Evaluation Report }",
+                    "1130,2150": "${ 5.4.6 from Evaluation Report }",
+                    "1210,2150": "${ 5.4.7 from Evaluation Report }",
+                    "1290,2150": "${ 5.4.8 from Evaluation Report }",
+                    "1370,2150": "${ 5.4.9 from Evaluation Report }",
+                    "1460,2150": "${ 5.4.10 from Evaluation Report }"
                 },
                 "2": {
+                    "726,150": "${ 5.5.1 from Evaluation Report }",
+                    "810,150": "${ 5.5.2 from Evaluation Report }",
+                    "890,150": "${ 5.5.3 from Evaluation Report }",
+                    "970,150": "${ 5.5.4 from Evaluation Report }",
+                    "1050,150": "${ 5.5.5 from Evaluation Report }",
+                    "1130,150": "${ 5.5.6 from Evaluation Report }",
+                    "1210,150": "${ 5.5.7 from Evaluation Report }",
+                    "1290,150": "${ 5.5.8 from Evaluation Report }",
+                    "1370,150": "${ 5.5.9 from Evaluation Report }",
+                    "1460,150": "${ 5.5.10 from Evaluation Report }",
 
+                    "726,300": "${ 5.6.1 from Evaluation Report }",
+                    "810,300": "${ 5.6.2 from Evaluation Report }",
+                    "890,300": "${ 5.6.3 from Evaluation Report }",
+                    "970,300": "${ 5.6.4 from Evaluation Report }",
+                    "1050,300": "${ 5.6.5 from Evaluation Report }",
+                    "1130,300": "${ 5.6.6 from Evaluation Report }",
+                    "1210,300": "${ 5.6.7 from Evaluation Report }",
+                    "1290,300": "${ 5.6.8 from Evaluation Report }",
+                    "1370,300": "${ 5.6.9 from Evaluation Report }",
+                    "1460,300": "${ 5.6.10 from Evaluation Report }",
+
+                    "660,1700": "${ 9.1.1 from Evaluation Report }",
+                    "740,1700": "${ 9.1.2 from Evaluation Report }",
+                    "820,1700": "${ 9.1.3 from Evaluation Report }",
+                    "900,1700": "${ 9.1.4 from Evaluation Report }",
+                    "980,1700": "${ 9.1.5 from Evaluation Report }",
+                    "1060,1700": "${ 9.1.6 from Evaluation Report }",
+                    "1150,1700": "${ 9.1.7 from Evaluation Report }",
+                    "1230,1700": "${ 9.1.8 from Evaluation Report }",
+                    "1325,1700": "${ 9.1.9 from Evaluation Report }",
+                    "1435,1700": "${ 9.1.10 from Evaluation Report }",
+
+                    "660,1800": "${ 9.2.1 from Evaluation Report }",
+                    "740,1800": "${ 9.2.2 from Evaluation Report }",
+                    "820,1800": "${ 9.2.3 from Evaluation Report }",
+                    "900,1800": "${ 9.2.4 from Evaluation Report }",
+                    "980,1800": "${ 9.2.5 from Evaluation Report }",
+                    "1060,1800": "${ 9.2.6 from Evaluation Report }",
+                    "1150,1800": "${ 9.2.7 from Evaluation Report }",
+                    "1230,1800": "${ 9.2.8 from Evaluation Report }",
+                    "1325,1800": "${ 9.2.9 from Evaluation Report }",
+                    "1435,1800": "${ 9.2.10 from Evaluation Report }",
+
+                    "660,1900": "${ 9.3.1 from Evaluation Report }",
+                    "740,1900": "${ 9.3.2 from Evaluation Report }",
+                    "820,1900": "${ 9.3.3 from Evaluation Report }",
+                    "900,1900": "${ 9.3.4 from Evaluation Report }",
+                    "980,1900": "${ 9.3.5 from Evaluation Report }",
+                    "1060,1900": "${ 9.3.6 from Evaluation Report }",
+                    "1150,1900": "${ 9.3.7 from Evaluation Report }",
+                    "1230,1900": "${ 9.3.8 from Evaluation Report }",
+                    "1325,1900": "${ 9.3.9 from Evaluation Report }",
+                    "1435,1900": "${ 9.3.10 from Evaluation Report }",
+
+                    "660,2000": "${ 9.4.1 from Evaluation Report }",
+                    "740,2000": "${ 9.4.2 from Evaluation Report }",
+                    "820,2000": "${ 9.4.3 from Evaluation Report }",
+                    "900,2000": "${ 9.4.4 from Evaluation Report }",
+                    "980,2000": "${ 9.4.5 from Evaluation Report }",
+                    "1060,2000": "${ 9.4.6 from Evaluation Report }",
+                    "1150,2000": "${ 9.4.7 from Evaluation Report }",
+                    "1230,2000": "${ 9.4.8 from Evaluation Report }",
+                    "1325,2000": "${ 9.4.9 from Evaluation Report }",
+                    "1435,2000": "${ 9.4.10 from Evaluation Report }",
+
+                    "660,2150": "${ 9.5.1 from Evaluation Report }",
+                    "740,2150": "${ 9.5.2 from Evaluation Report }",
+                    "820,2150": "${ 9.5.3 from Evaluation Report }",
+                    "900,2150": "${ 9.5.4 from Evaluation Report }",
+                    "980,2150": "${ 9.5.5 from Evaluation Report }",
+                    "1060,2150": "${ 9.5.6 from Evaluation Report }",
+                    "1150,2150": "${ 9.5.7 from Evaluation Report }",
+                    "1230,2150": "${ 9.5.8 from Evaluation Report }",
+                    "1325,2150": "${ 9.5.9 from Evaluation Report }",
+                    "1435,2150": "${ 9.5.10 from Evaluation Report }"
                 },
                 "3": {
+                    "660,200": "${ 9.6.1 from Evaluation Report }",
+                    "740,200": "${ 9.6.2 from Evaluation Report }",
+                    "820,200": "${ 9.6.3 from Evaluation Report }",
+                    "900,200": "${ 9.6.4 from Evaluation Report }",
+                    "980,200": "${ 9.6.5 from Evaluation Report }",
+                    "1060,200": "${ 9.6.6 from Evaluation Report }",
+                    "1150,200": "${ 9.6.7 from Evaluation Report }",
+                    "1230,200": "${ 9.6.8 from Evaluation Report }",
+                    "1325,200": "${ 9.6.9 from Evaluation Report }",
+                    "1435,200": "${ 9.6.10 from Evaluation Report }",
 
+                    "660,300": "${ 9.7.1 from Evaluation Report }",
+                    "740,300": "${ 9.7.2 from Evaluation Report }",
+                    "820,300": "${ 9.7.3 from Evaluation Report }",
+                    "900,300": "${ 9.7.4 from Evaluation Report }",
+                    "980,300": "${ 9.7.5 from Evaluation Report }",
+                    "1060,300": "${ 9.7.6 from Evaluation Report }",
+                    "1150,300": "${ 9.7.7 from Evaluation Report }",
+                    "1230,300": "${ 9.7.8 from Evaluation Report }",
+                    "1325,300": "${ 9.7.9 from Evaluation Report }",
+                    "1435,300": "${ 9.7.10 from Evaluation Report }",
+
+                    "660,400": "${ 9.8.1 from Evaluation Report }",
+                    "740,400": "${ 9.8.2 from Evaluation Report }",
+                    "820,400": "${ 9.8.3 from Evaluation Report }",
+                    "900,400": "${ 9.8.4 from Evaluation Report }",
+                    "980,400": "${ 9.8.5 from Evaluation Report }",
+                    "1060,400": "${ 9.8.6 from Evaluation Report }",
+                    "1150,400": "${ 9.8.7 from Evaluation Report }",
+                    "1230,400": "${ 9.8.8 from Evaluation Report }",
+                    "1325,400": "${ 9.8.9 from Evaluation Report }",
+                    "1435,400": "${ 9.8.10 from Evaluation Report }",
+
+                    "660,500": "${ 9.9.1 from Evaluation Report }",
+                    "740,500": "${ 9.9.2 from Evaluation Report }",
+                    "820,500": "${ 9.9.3 from Evaluation Report }",
+                    "900,500": "${ 9.9.4 from Evaluation Report }",
+                    "980,500": "${ 9.9.5 from Evaluation Report }",
+                    "1060,500": "${ 9.9.6 from Evaluation Report }",
+                    "1150,500": "${ 9.9.7 from Evaluation Report }",
+                    "1230,500": "${ 9.9.8 from Evaluation Report }",
+                    "1325,500": "${ 9.9.9 from Evaluation Report }",
+                    "1435,500": "${ 9.9.10 from Evaluation Report }",
+
+                    "660,600": "${ 9.10.1 from Evaluation Report }",
+                    "740,600": "${ 9.10.2 from Evaluation Report }",
+                    "820,600": "${ 9.10.3 from Evaluation Report }",
+                    "900,600": "${ 9.10.4 from Evaluation Report }",
+                    "980,600": "${ 9.10.5 from Evaluation Report }",
+                    "1060,600": "${ 9.10.6 from Evaluation Report }",
+                    "1150,600": "${ 9.10.7 from Evaluation Report }",
+                    "1230,600": "${ 9.10.8 from Evaluation Report }",
+                    "1325,600": "${ 9.10.9 from Evaluation Report }",
+                    "1435,600": "${ 9.10.10 from Evaluation Report }",
+
+                    "660,700": "${ 9.11.1 from Evaluation Report }",
+                    "740,700": "${ 9.11.2 from Evaluation Report }",
+                    "820,700": "${ 9.11.3 from Evaluation Report }",
+                    "900,700": "${ 9.11.4 from Evaluation Report }",
+                    "980,700": "${ 9.11.5 from Evaluation Report }",
+                    "1060,700": "${ 9.11.6 from Evaluation Report }",
+                    "1150,700": "${ 9.11.7 from Evaluation Report }",
+                    "1230,700": "${ 9.11.8 from Evaluation Report }",
+                    "1325,700": "${ 9.11.9 from Evaluation Report }",
+                    "1435,700": "${ 9.11.10 from Evaluation Report }"
                 }
             },
             "Final Report (CompanyOrganization Mentor)": {
@@ -188,7 +380,7 @@
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
 
-                if (!debug || i == "Statement of Understanding (Organization)" && v == "3") {
+                if (!debug || i == "Evaluation Report (Student)" && v == "3") {
                     edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
                 }
 
@@ -252,7 +444,26 @@
             "To": "26-08-2016",
             "Hours": "180",
             "Allowance (Total)": "100"
+        },
+        "Evaluation Report": {
+
         }
+    };
+
+    var initData = function() {
+
+        data["Evaluation Report"]["Campus-" + (["CW", "LWL", "MH", "ST", "TY", "TM"].indexOf(data.Personal.Campus) + 1)] = "✓";
+
+        for (var i = 1; i < 12; i++) {
+
+            if (i < 7) {
+                data["Evaluation Report"]["5." + i + "." + Math.floor(Math.random() * (10) + 1)] = "✓";
+            }
+
+            data["Evaluation Report"]["9." + i + "." + Math.floor(Math.random() * (10) + 1)] = "✓";
+
+        }
+
     };
 
     var replace = function(str) {
@@ -279,14 +490,13 @@
 
             ctx.drawImage(this, 0, 0);
             ctx.font = "bold 30px Ubuntu";
-            // ctx.fillText("Wong Ka Wa", 600, 736);
             Object.keys(setting).forEach(function(i) {
                 var v = i.split(",");
                 ctx.fillText(replace(setting[i]), v[0], v[1]);
             });
 
             if (debug) {
-                // document.body.appendChild(canvas);
+                document.body.appendChild(canvas);
             } else {
                 cache[this.src] = canvas.toDataURL();
             }
@@ -327,7 +537,10 @@
     };
 
     if (debug) {
+
         document.getElementById("output").style.display = "block";
         output();
+
     }
+
 })();
