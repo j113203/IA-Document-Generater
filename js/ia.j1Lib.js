@@ -473,7 +473,7 @@
 
     };
 
-    window.cache = {
+    var cache = {
 
     };
 
