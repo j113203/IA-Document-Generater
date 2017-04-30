@@ -317,8 +317,9 @@
                     "560,950": "${ From from Company }",
                     "810,950": "${ Hours from Company }",
                     "430,1170": "${ Chinese Name from Personal }",
-                    "520,1290": "${ English Name from Company }",
+                    "430,1490": "${ English Name from Company }",
                     "930,1390": "${ Hours from Company }",
+                    "520,1290": "${ From from Company }"
                 }
             },
             "Insurance Coverage for Industrial Attachment Students": {
@@ -380,7 +381,7 @@
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
 
-                if (!debug || i == "Evaluation Report (Student)" && v == "3") {
+                if (!debug || i == "Industrial Attachment Certificate (Template)" && v == "1") {
                     edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
                 }
 
