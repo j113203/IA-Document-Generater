@@ -35,6 +35,7 @@ div#detail\.company {
     background-color: #fff;
     height: 80%;
     width: 512px;
+    border-radius: 2px;
 }
 
 div#detail\.personal.await {
