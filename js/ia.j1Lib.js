@@ -129,7 +129,12 @@
 
                 },
                 "2": {
-                    "1000,1240": "${ From from Company }"
+                    "1000,1240": "${ From from Company }",
+                    "560,563": "${ English Name from Personal }",
+                    "1150,563": "${ Programme Code from Personal }/${ Study/Class from Personal }",
+                    "1060,625": "${ Campus from Personal }",
+                    "790,940": "${ From from Company }",
+                    "1060,940": "${ From from Company }",
                 }
             },
             "Monthly Report (Student)": {
@@ -175,7 +180,7 @@
         output.innerHTML = Object.keys(Template).map(function(i) {
             Object.keys(Template[i]).forEach(function(v) {
 
-                if (!debug || i == "Evaluation Report (Student)" && v == "1") {
+                if (!debug || i == "Insurance Coverage for Industrial Attachment Students" && v == "2") {
                     edit("IA Document Template/" + i + "/" + i + "-" + v + ".png", Template[i][v]);
                 }
 
@@ -240,7 +245,7 @@
     };
 
     var replace = function(str) {
-        return str.replace(/\${.(.*).from.(.*).}/g, function(a, b, c) {
+        return str.replace(/\${\ (.*?) from (.*?)\ }/g, function(a, b, c) {
             return data[c][b] || "";
         });
     };
